@@ -211,7 +211,7 @@ public abstract class MixinEntity implements IEntityDraggingInformationProvider 
      * @author tri0de
      * @reason Allows ship blocks to spawn landing particles, running particles, and play step sounds
      */
-    @Inject(method = "getOnPos", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "getOnPos(F)Lnet/minecraft/core/BlockPos;", at = @At("HEAD"), cancellable = true)
     private void preGetOnPos(final CallbackInfoReturnable<BlockPos> cir) {
         final Vector3dc blockPosInGlobal = new Vector3d(
             position.x,
